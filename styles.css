@@ -24,8 +24,13 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 section {
   padding: 3.9rem 0;
+  overflow: hidden;
 }
 
 img {
@@ -165,6 +170,9 @@ header {
   font-weight: 100;
   line-height: 0.4;
   letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp 0.5s forwards;
+  animation-delay: 0.5s;
 }
 
 .first-letter {
@@ -180,6 +188,7 @@ header {
   font-weight: 900;
   letter-spacing: 0.5rem;
   margin-right: -0.5rem;
+  animation: scale 0.5s forwards;
 }
 
 .separator {
@@ -194,6 +203,9 @@ header {
   height: 0.25rem;
   background-color: #fff;
   position: relative;
+  opacity: 0;
+  animation: grow 2s forwards;
+  animation-delay: 0.9s;
 }
 
 .line-right::before,
@@ -203,6 +215,9 @@ header {
   top: 50%;
   transform: translateY(-50%);
   border: 0.6rem solid transparent;
+  opacity: 0;
+  animation: grow 0.5s forwards;
+  animation-delay: 1.2s;
 }
 
 .line-right::before {
@@ -219,9 +234,18 @@ header {
   font-size: 1.2rem;
   color: var(--secondary-font-color);
   margin: 0 1.6rem;
+  opacity: 0;
+  animation: spin 0.5s forwards;
+  animation-delay: 0.7s;
 }
 
-.headline-description {
+.single-animation {
+  opacity: 0;
+  animation: fadeDown 0.5s forwards;
+  animation-delay: 1.5s;
+}
+
+.headline-description h5 {
   color: #fff;
   font-size: 1.4rem;
   font-weight: 100;
@@ -371,10 +395,11 @@ footer {
   color: #fff;
   font-size: 2rem;
   padding: 2rem;
+  animation: up 2s infinite;
 }
 
 .footer-content {
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .footer-content h4 {
@@ -407,9 +432,9 @@ footer {
 .social-icons i {
   font-size: 2rem;
   color: #fff;
-  padding: .8rem 2rem;
-  opacity: .5;
-  transition: color .5s;
+  padding: 0.8rem 2rem;
+  opacity: 0.5;
+  transition: color 0.5s;
 }
 
 .social-icons i:hover,
@@ -428,7 +453,7 @@ footer {
   width: 100%;
   max-width: 25rem;
   padding: 1rem;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
 }
 
 .newsletter-btn {
@@ -437,7 +462,7 @@ footer {
   color: var(--main-font-color-dark);
   cursor: pointer;
   font-size: 1.6rem;
-  padding: 1px .6rem;
+  padding: 1px 0.6rem;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -507,7 +532,7 @@ footer {
 
   .headline {
     font-size: 4.7rem;
-    letter-spacing: .8rem;
+    letter-spacing: 0.8rem;
   }
 
   .line {
@@ -519,7 +544,7 @@ footer {
     align-items: center;
   }
 
-  .restaurant-info>div {
+  .restaurant-info > div {
     flex: 1;
   }
 
@@ -559,3 +584,68 @@ footer {
 }
 
 /* Animations */
+@keyframes fadeUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-1rem);
+  }
+}
