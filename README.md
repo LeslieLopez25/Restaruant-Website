@@ -6,7 +6,7 @@
 
 ### Link
 
-- Live Site: [The Cloak & Petal](https://leslielopez25.github.io/Restaruant-Website/)
+- Live Site: [The Cloak & Petal](https://the-cloak-and-petal.netlify.app/)
 
 ### Screenshot
 
