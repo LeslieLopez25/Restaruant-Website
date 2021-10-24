@@ -544,7 +544,7 @@ footer {
     align-items: center;
   }
 
-  .restaurant-info > div {
+  .restaurant-info>div {
     flex: 1;
   }
 
@@ -588,6 +588,7 @@ footer {
   0% {
     transform: translateY(4rem);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -620,6 +621,7 @@ footer {
   0% {
     transform: rotate(0);
   }
+
   100% {
     opacity: 1;
     transform: rotate(-360deg);
@@ -641,9 +643,11 @@ footer {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
     transform: translateY(-1rem);
